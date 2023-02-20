@@ -39,16 +39,16 @@ I may work on a .sh script to automate everything in the future once I have my
 plugins more set it stone to what I want.
 
 ## Plugins
-<b>Home Page</b> Startify - https://github.com/mhinz/vim-startify
-<b>Caches LUA PLugins</b> Impatient - https://github.com/lewis6991/impatient.nvim
-<b>Theme</b> Tokyonight - https://github.com/folke/tokyonight.nvim
-<b>Icons</b> Web-DevIcons - https://github.com/nvim-tree/nvim-web-devicons
-<b>LSP (Language Server)</b> COC - https://github.com/neoclide/coc.nvim
-<b>FZF (Fuzzy) Finder</b> Telescope - https://github.com/nvim-telescope/telescope.nvim
-<b>Extra Lua Functions (Telescope Dependency)</b> Plenary - https://github.com/nvim-lua/plenary.nvim
-<b>File Explorer</b> ChadTree - https://github.com/ms-jpq/chadtree
-<b>Tabs</b> BarBar - https://github.com/romgrk/barbar.nvim
-<b>Indentation Guides</b> Indent-Blankline - https://github.com/lukas-reineke/indent-blankline.nvim
+<b>Home Page</b> Startify - https://github.com/mhinz/vim-startify<br>
+<b>Caches LUA PLugins</b> Impatient - https://github.com/lewis6991/impatient.nvim<br>
+<b>Theme</b> Tokyonight - https://github.com/folke/tokyonight.nvim<br>
+<b>Icons</b> Web-DevIcons - https://github.com/nvim-tree/nvim-web-devicons<br>
+<b>LSP (Language Server)</b> COC - https://github.com/neoclide/coc.nvim<br>
+<b>FZF (Fuzzy) Finder</b> Telescope - https://github.com/nvim-telescope/telescope.nvim<br>
+<b>Extra Lua Functions (Telescope Dependency)</b> Plenary - https://github.com/nvim-lua/plenary.nvim<br>
+<b>File Explorer</b> ChadTree - https://github.com/ms-jpq/chadtree<br>
+<b>Tabs</b> BarBar - https://github.com/romgrk/barbar.nvim<br>
+<b>Indentation Guides</b> Indent-Blankline - https://github.com/lukas-reineke/indent-blankline.nvim<br>
 
 ## Loadtime
 
@@ -67,8 +67,8 @@ should still give a rough idea.
 If you are looking for something less basic or that can utilize the latest versions
 of neovim feel free to check out the listed pre setup configs below!
 
-<b>NvChad</b> - https://github.com/NvChad/NvChad
-<b>AstroVim</b> - https://github.com/AstroNvim/AstroNvim
-<b>LunarVim</b> - https://github.com/LunarVim/LunarVim
-<b>CosmicNvim</b> - https://github.com/CosmicNvim/CosmicNvim
-<b>Ecovim</b> - https://github.com/pze/econvim
+<b>NvChad</b> - https://github.com/NvChad/NvChad<br>
+<b>AstroVim</b> - https://github.com/AstroNvim/AstroNvim<br>
+<b>LunarVim</b> - https://github.com/LunarVim/LunarVim<br>
+<b>CosmicNvim</b> - https://github.com/CosmicNvim/CosmicNvim<br>
+<b>Ecovim</b> - https://github.com/pze/econvim<br>
