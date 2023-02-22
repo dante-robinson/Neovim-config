@@ -26,16 +26,17 @@ set spellsuggest=best,9     " Show up to 9 spellcheck options
 
 " Plugins
 call plug#begin()
- Plug 'mhinz/vim-startify'
- Plug 'lewis6991/impatient.nvim'
- Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
- Plug 'nvim-tree/nvim-web-devicons'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'mhinz/vim-startify' " Homepage
+ Plug 'lewis6991/impatient.nvim' " Caches lua to load faster next time
+ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Theme
+ Plug 'nvim-tree/nvim-web-devicons' " Icons
  Plug 'nvim-lua/plenary.nvim' " Telescope dependency
- Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' } " Fuzzy (fzf) Finder
  Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
- Plug 'romgrk/barbar.nvim'
+ Plug 'romgrk/barbar.nvim' " Tabs
  Plug 'lukas-reineke/indent-blankline.nvim'
+ Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Completion Plugin
+ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " Snippets
 call plug#end()
 
 " Colorscheme
@@ -51,5 +52,8 @@ nnoremap <Space>f <cmd>Telescope find_files<cr>
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
-" Run impatient
+" Load COQ on startup
+autocmd VimEnter * COQnow -s 
+
+" Require Lua Scripts
 lua require('impatient')

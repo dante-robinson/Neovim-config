@@ -1,2 +1,0 @@
-version = "67.1.*"
-requires = ["types-docutils"]

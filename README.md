@@ -8,11 +8,6 @@ version it likely to differ from the version on -current which can be found here
 
 https://openports.pl/path/editors/neovim
 
-I may swap out COC in the future to move to something like nvim lsp with cmp but
-for the time being things will remain like this. 
-
-This config may change from time to time adding and removing different plugins.
-I would suggest cloning the repo if you like the current configuration and pulling
 the changes you like to your repo.
 
 Have any suggestions feel free to open an issue I will be happy to take a look.
@@ -29,26 +24,23 @@ to your .config directory I would recommend removing your current nvim folder if
 you have one already.
 
 After that you can run nvim in your terminal and then you will probably need to
-run :PlugInstall to install all the plugins as they are stored in .local I would
-also then recommend running :CocUpdate just in case it needs to redownload those
-extensions. I think they are stored in .config/coc (hence including the folder in
-the repo but I could be mistaken so I would run that command anyway. Any errors
-that load on boot is probably due to one of those commands not being run first.
+run :PlugInstall to install all the plugins as they are stored in .local You will then probably have other errors related to COQ, to solve these run :COQdeps it will show three dots like so "..." just wait as its preparing to download things. After these are setup
+you should be able to restart nvim with everything working.
 
 I may work on a .sh script to automate everything in the future once I have my
 plugins more set it stone to what I want.
 
 ## Plugins
-<b>Home Page</b> Startify - https://github.com/mhinz/vim-startify<br>
-<b>Caches LUA PLugins</b> Impatient - https://github.com/lewis6991/impatient.nvim<br>
-<b>Theme</b> Tokyonight - https://github.com/folke/tokyonight.nvim<br>
-<b>Icons</b> Web-DevIcons - https://github.com/nvim-tree/nvim-web-devicons<br>
-<b>LSP (Language Server)</b> COC - https://github.com/neoclide/coc.nvim<br>
-<b>FZF (Fuzzy) Finder</b> Telescope - https://github.com/nvim-telescope/telescope.nvim<br>
-<b>Extra Lua Functions (Telescope Dependency)</b> Plenary - https://github.com/nvim-lua/plenary.nvim<br>
-<b>File Explorer</b> ChadTree - https://github.com/ms-jpq/chadtree<br>
-<b>Tabs</b> BarBar - https://github.com/romgrk/barbar.nvim<br>
-<b>Indentation Guides</b> Indent-Blankline - https://github.com/lukas-reineke/indent-blankline.nvim<br>
+<b>Home Page - </b> Startify - https://github.com/mhinz/vim-startify<br>
+<b>Caches LUA PLugins - </b> Impatient - https://github.com/lewis6991/impatient.nvim<br>
+<b>Theme - </b> Tokyonight - https://github.com/folke/tokyonight.nvim<br>
+<b>Icons - </b> Web-DevIcons - https://github.com/nvim-tree/nvim-web-devicons<br>
+<b>LSP (Language Server) + Completion - </b> COQ - https://github.com/ms-jpq/coq_nvim<br>
+<b>FZF (Fuzzy) Finder - </b> Telescope - https://github.com/nvim-telescope/telescope.nvim<br>
+<b>Extra Lua Functions (Telescope Dependency) - </b> Plenary - https://github.com/nvim-lua/plenary.nvim<br>
+<b>File Explorer - </b> ChadTree - https://github.com/ms-jpq/chadtree<br>
+<b>Tabs - </b> BarBar - https://github.com/romgrk/barbar.nvim<br>
+<b>Indentation Guides - </b> Indent-Blankline - https://github.com/lukas-reineke/indent-blankline.nvim<br>
 
 ## Loadtime
 
