@@ -31,8 +31,16 @@ install Formatters and Linters yourself I have provided a list of those that I
 am using in this config below. You can also add your own in the following config
 files.
 
-<b>Linters - nvim/lua/config/lint.lua</b>
-<b>Formatters - nvim/lua/config/lsp/formatter.lua</b>
+<b>Linters</b> - nvim/lua/config/lint.lua<br>
+<b>Formatters</b> - nvim/lua/config/lsp/formatter.lua
+
+#### Getting Icons (Optional)
+
+OpenBSD doesn't have a nerd fonts package containing icons so we need to download them manually.
+
+https://www.nerdfonts.com/font-downloads 
+
+Head over to the nerd fonts download page and download the Symbols Nerd Font package, extract the zip and then if your using a Desktop Environment and not a window manager like GNOME you may be able to just open the .ttf files and click install. Otherwise make a folder in your home directory called .fonts and move the .ttf files to that folder and you will then have icons in neovim.
 
 ## Plugins
 
@@ -52,7 +60,6 @@ files.
 <b>Highlight Selected Word - </b> Illuminate - https://github.com/RRethy/vim-illuminate<br>
 <b>Autoclose tags and quotes - </b> Nvim Autopairs - https://github.com/windwp/nvim-autopairs<br>
 <b>Comment Keybinds - </b> Comment - https://github.com/numToStr/Comment.nvim <br>
-<b>Github tools - </b> Gitsigns - https://github.com/lewis6991/gitsigns.nvim<br>
 <b>Linter - </b> Nvim Lint - https://github.com/mfussenegger/nvim-lint<br>
 <b>FZF (Fuzzy) Finder - </b> Telescope - https://github.com/nvim-telescope/telescope.nvim<br>
 <b>Extra Lua Functions (Telescope Dependency) - </b> Plenary - https://github.com/nvim-lua/plenary.nvim<br>
