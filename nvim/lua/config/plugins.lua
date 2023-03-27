@@ -90,8 +90,6 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs"
     -- Comments Keybinds
     use "numToStr/Comment.nvim"
-    -- Useful Git commands and tools
-    use "lewis6991/gitsigns.nvim"
     -- Linter
     use 'mfussenegger/nvim-lint'
     -- Formatter
