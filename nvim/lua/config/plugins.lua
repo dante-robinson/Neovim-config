@@ -48,11 +48,27 @@ return packer.startup(function(use)
     use "kyazdani42/nvim-web-devicons"
     -- Theme
     use "folke/tokyonight.nvim"
-    -- Fuzzy Finder
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = "nvim-lua/plenary.nvim" }
+    -- Syntax Highlighting
+		use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+		-- Fuzzy Finder
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' , requires = "nvim-lua/plenary.nvim" }
     -- File Finder
-    use { 'ms-jpq/chadtree', branch = 'chad', run = "python3 -m chadtree deps"}
-    -- Tabs
+		use {
+  		"nvim-neo-tree/neo-tree.nvim",
+    	branch = "v3.x",
+    	requires = { 
+      	"nvim-lua/plenary.nvim",
+      	"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      	"MunifTanjim/nui.nvim",
+    	}
+ 		}
+		-- Tabs
     use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
     -- Status Bar
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
@@ -74,28 +90,26 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp"
     -- Extra Lua Completions
     use "hrsh7th/cmp-nvim-lua"
+		-- Convert TailwindCSS to CSS
+		use "jcha0713/cmp-tw2css"
     -- Snippets
     use "L3MON4D3/LuaSnip"
     -- Extra Snippets
     use "rafamadriz/friendly-snippets"
-    -- LSP
-    use "neovim/nvim-lspconfig"
-    -- LSP Package Manager
-    use "williamboman/mason.nvim"
-    -- Connect Mason to LSP
-    use "williamboman/mason-lspconfig.nvim"
     -- Highlighting words under cursor
     use "RRethy/vim-illuminate"
     -- Autoclose
     use "windwp/nvim-autopairs"
     -- Comments Keybinds
     use "numToStr/Comment.nvim"
-    -- Linter
-    use 'mfussenegger/nvim-lint'
-    -- Formatter
-    require('packer').use { 'mhartington/formatter.nvim' }
-
-    if PACKER_BOOTSTRAP then
+    -- LSP
+    use "neovim/nvim-lspconfig"
+		-- Formatter
+		use {"nvimdev/guard.nvim", requires="nvimdev/guard-collection"}
+		-- Clangd Extensions
+		use "p00f/clangd_extensions.nvim"
+    
+		if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
 end)

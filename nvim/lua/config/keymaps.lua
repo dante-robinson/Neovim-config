@@ -36,6 +36,6 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 
 -- Open CHADTree
-keymap("n", "<Space>e", "<cmd>CHADopen<cr>", opts)
+keymap("n", "<Space>e", "<cmd>Neotree<cr>", opts)
 --Open Telescope
 keymap("n", "<Space>f", "<cmd>Telescope find_files<cr>", opts)

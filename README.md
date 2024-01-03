@@ -3,7 +3,7 @@
 This configuration is designed around the current stable version of the package
 shipped with OpenBSD, which is usually out of date. You can find the current
 package version by visiting - https://cdn.openbsd.org/pub/OpenBSD/ and selecting
-the current OpenBSD release, at the time of writing it is 7.2 from there you can
+the current OpenBSD release, at the time of writing it is 7.4 from there you can
 select packages and amd64 (or whatever platform your using) and find neovim this
 version it likely to differ from the version on -current which can be found here.
 
@@ -28,11 +28,25 @@ you have one already.
 After that you can run nvim in your terminal and packer should install itself
 and all the plugins it needs the only real configuration you will need to do is
 install Formatters and Linters yourself I have provided a list of those that I
-am using in this config below. You can also add your own in the following config
-files.
+am using in this config below.
 
-<b>Linters</b> - nvim/lua/config/lint.lua<br>
-<b>Formatters</b> - nvim/lua/config/lsp/formatter.lua
+```
+doas npm install -g --save-dev --save-exact @biomejs/biome vscode-langservers-extracted eslint
+```
+and
+```
+doas pkg_add clang-tools-extra
+```
+
+If you want to add more languages to the lsp for personal use you will need to first check this link to find the software you need. In most cases it's not an OpenBSD package (check with openports.pl) and you will need to install it globally with npm or yarn.
+
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+
+After this you get the software installed you will also need to copy the snippet to enable the server and paste it here.
+
+```
+nvim/lua/config/lsp.lua
+```
 
 #### Getting Icons (Optional)
 
@@ -56,29 +70,30 @@ Head over to the nerd fonts download page and download the Symbols Nerd Font pac
 <b>Luasnip Framework - </b> Luasnip - https://github.com/L3MON4D3/LuaSnip<br>
 <b>Extra Snippets - </b> Friendly Snippets - https://github.com/rafamadriz/friendly-snippets<br>
 <b>LSP Package Manager - </b> Mason - https://github.com/williamboman/mason.nvim<br>
-<b>Mason LSP Connection - </b> Mason LspConfig - https://github.com/williamboman/mason-lspconfig.nvim<br>
 <b>Highlight Selected Word - </b> Illuminate - https://github.com/RRethy/vim-illuminate<br>
 <b>Autoclose tags and quotes - </b> Nvim Autopairs - https://github.com/windwp/nvim-autopairs<br>
 <b>Comment Keybinds - </b> Comment - https://github.com/numToStr/Comment.nvim <br>
-<b>Linter - </b> Nvim Lint - https://github.com/mfussenegger/nvim-lint<br>
 <b>FZF (Fuzzy) Finder - </b> Telescope - https://github.com/nvim-telescope/telescope.nvim<br>
 <b>Extra Lua Functions (Telescope Dependency) - </b> Plenary - https://github.com/nvim-lua/plenary.nvim<br>
-<b>File Explorer - </b> ChadTree - https://github.com/ms-jpq/chadtree<br>
+<b>File Explorer - </b> NeoTree - https://github.com/nvim-neo-tree/neo-tree.nvim<br>
 <b>Tabs - </b> BarBar - https://github.com/romgrk/barbar.nvim<br>
 <b>Indentation Guides - </b> Indent-Blankline - https://github.com/lukas-reineke/indent-blankline.nvim<br>
+<b>Convert Tailwind to CSS - </b> tw2css - https://github.com/jcha0713/cmp-tw2css<br>
+<b>Formatter - </b> Guard - https://github.com/nvimdev/guard.nvim<br>
+<b>Clangd Extensions - </b> Clangd Extensions - https://github.com/p00f/clangd_extensions.nvim<br>
 
 ## Loadtime
 
-Tested on my 7950X on OpenBSD 7.2 with smt enabled and all cores locked to 4.8GHz.
+Tested on my i7-1370P on OpenBSD 7.4 with smt disabled.
 OpenBSD is not the fastest OS so this may be affecting the load times.
 
 ```
 Benchmark 1: nvim --headless +qa
-  Time (mean ± σ):     283.4 ms ±  34.9 ms    [User: 86.0 ms, System: 247.4 ms]
-  Range (min … max):   224.6 ms … 329.5 ms    10 runs
+  Time (mean ± σ):     152.3 ms ±   2.9 ms    [User: 71.1 ms, System: 72.7 ms]
+  Range (min … max):   149.1 ms … 160.5 ms    19 runs
 ```
 
-I do have other things running in the background like Neovim and 2 browsers but
+I do have other things running in the background like Neovim and a browser but
 should still give a rough idea.
 
 ### Alternative Configs
