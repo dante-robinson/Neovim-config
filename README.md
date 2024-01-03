@@ -27,16 +27,20 @@ you have one already.
 
 After that you can run nvim in your terminal and packer should install itself
 and all the plugins it needs the only real configuration you will need to do is
-install Formatters and Linters yourself I have provided a list of those that I
-am using in this config below.
+install Formatters, Linters (finds errors), and Language Servers (colors the text to make it easier to read)
+ yourself I have provided a list of those that I am using in this config below.
+
+#### Language Servers
 
 ```
-doas npm install -g --save-dev --save-exact @biomejs/biome vscode-langservers-extracted eslint
+doas npm install -g --save-dev --save-exact @biomejs/biome vscode-langservers-extracted eslint prettier
 ```
-and
+and 
 ```
 doas pkg_add clang-tools-extra
 ```
+
+This also installs clang-tidy for a linter in C as well as the Formatter prettier for CSS, JS and HTML.
 
 If you want to add more languages to the lsp for personal use you will need to first check this link to find the software you need. In most cases it's not an OpenBSD package (check with openports.pl) and you will need to install it globally with npm or yarn.
 
@@ -47,6 +51,25 @@ After this you get the software installed you will also need to copy the snippet
 ```
 nvim/lua/config/lsp.lua
 ```
+
+#### Formatters and Linters
+
+First you will need to find what's supported by guard by visiting this link.
+
+https://github.com/nvimdev/guard-collection
+
+Again you will need to find these packages on Openports.pl to see if they are available natively on OpenBSD or install them globally through npm or yarn.
+
+Then you need to add them to the config file themself here.
+
+```
+nvim/lua/config/guard.lua
+```
+
+In here you will place the code snippet that starts something like "ft(language)".
+If you get stuck you can find more documentation on this from guard itself with the link below.
+
+https://github.com/nvimdev/guard.nvim#example-configuration
 
 #### Getting Icons (Optional)
 
